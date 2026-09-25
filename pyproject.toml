@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "surgzoom"
+version = "1.0.0"
+description = "Question-guided temporal focusing for surgical video QA; solution to the SEGMENT track of the ORena SAVE FOCUS Challenge (MICCAI 2026)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Weixi Yi" }, { name = "Hanyuan Zhang" }, { name = "Runlong He" }]
+keywords = ["surgical video", "video question answering", "vision-language model", "Qwen3.5", "LoRA", "MICCAI"]
+dependencies = [
+    "ms-swift==4.3.2",
+    "transformers==5.12.1",
+    "peft==0.19.1",
+    "accelerate==1.12.0",
+    "qwen-vl-utils==0.0.14",
+    "av==15.1.0",
+    "imageio-ffmpeg==0.6.0",
+    "huggingface_hub>=1.0",
+    "pyarrow>=16",
+]
+
+[project.optional-dependencies]
+eval = ["orena-focus==0.3.5"]
+dev = ["pytest>=8"]
+
+[project.urls]
+Model = "https://huggingface.co/wxyi088/orena-SurgZoom"
+HeiCo = "https://huggingface.co/datasets/orena-dkfz/heico-focus-vqa"
+LapChole = "https://huggingface.co/datasets/orena-dkfz/lapchole-focus-vqa"
+Challenge = "https://orena-focus-challenge.org"
+
+[tool.setuptools]
+packages = ["surgzoom"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

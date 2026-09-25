@@ -1,0 +1,9 @@
+# Versions of the submitted container (torch 2.9.1 comes with the base image).
+ms-swift==4.3.2
+transformers==5.12.1
+peft==0.19.1
+accelerate==1.12.0
+qwen-vl-utils==0.0.14
+av==15.1.0
+imageio-ffmpeg==0.6.0
+orena-focus==0.3.5
